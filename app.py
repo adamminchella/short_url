@@ -36,7 +36,6 @@ def home():
         check_url_exists = ShortUrl.query.filter_by(original_url=url).first()
 
         img = qrcode.make(url)
-
         img.save(app.root_path + '/static/images/qr.png')
 
         if check_url_exists:

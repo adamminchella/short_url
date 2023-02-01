@@ -36,4 +36,18 @@ tr:nth-child(even) {
 
 .shortened-url {
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.qr-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: opacity(50%);
+}
+
+.qr-icon:hover {
+  filter: opacity(80%);
 }

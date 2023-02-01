@@ -17,7 +17,10 @@
         {% for url in urls %}
             <tr>
                 <td class="original-url"><a href="{{ url.original_url }}">{{ url.original_url }}</a></td>
-                <td class="shortened-url"><a href= "{{url.short_url}}">{{url.short_url}}</a></td>
+                <td class="shortened-url">
+                    <a href= "{{url.short_url}}">{{url.short_url}}</a>
+                    <img class="qr-icon" src="../static/images/qr-code-icon.png" alt="">
+                </td>
             </tr>
         {% endfor %}
         </table>
