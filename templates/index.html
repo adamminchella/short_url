@@ -7,14 +7,16 @@
 {% block title %}{% endblock title %}
 
 {% block content %}
-    <section class="content">
-        <h1>Shorten a url!</h1>
-        <form action="" method="POST">
-            <div class="url-form-container">
-                <input type="text" name="url-input" id="url-input" placeholder="Enter URL here..." />
-                <input type="submit" value="Shorten URL">
-            </div>
-        </form>
+    <section>
+        <div class="content">
+            <h1>Shorten a url!</h1>
+            <form action="" method="POST">
+                <div class="url-form-container">
+                    <input type="text" name="url-input" id="url-input" placeholder="Enter URL here..." />
+                    <input type="submit" value="Shorten URL">
+                </div>
+            </form>
+        </div>
         {% if short_url %}
             <div class="short-url-container">
                 <p>Original URL: <a href="{{ original_url }}">{{ original_url }}</a></p>

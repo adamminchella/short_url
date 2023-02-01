@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "97618046c3130c1b4c0f696f408fdbec8115db025f067148822c5b090441673e"
+            "sha256": "bbe923136918d97e2f66f77fd7dcf9c57cec77c3101702a56865b4f6ab8d7d6e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -58,11 +58,11 @@
         },
         "flask-sqlalchemy": {
             "hashes": [
-                "sha256:16199f5b3ddfb69e0df2f52ae4c76aedbfec823462349dabb21a1b2e0a2b65e9",
-                "sha256:7d0cd9cf73e64a996bb881a1ebd01633fc5a6d11c36ea27f7b5e251dc45476e7"
+                "sha256:2764335f3c9d7ebdc9ed6044afaf98aae9fa50d7a074cef55dde307ec95903ec",
+                "sha256:add5750b2f9cd10512995261ee2aa23fab85bd5626061aa3c564b33bb4aa780a"
             ],
             "index": "pypi",
-            "version": "==3.0.2"
+            "version": "==3.0.3"
         },
         "greenlet": {
             "hashes": [
@@ -236,6 +236,21 @@
             ],
             "index": "pypi",
             "version": "==2.9.5"
+        },
+        "pypng": {
+            "hashes": [
+                "sha256:4a43e969b8f5aaafb2a415536c1a8ec7e341cd6a3f957fd5b5f32a4cfeed902c",
+                "sha256:739c433ba96f078315de54c0db975aee537cbc3e1d0ae4ed9aab0ca1e427e2c1"
+            ],
+            "version": "==0.20220715.0"
+        },
+        "qrcode": {
+            "hashes": [
+                "sha256:7ff613c4ef2d56a0dddbc54d8d1b6dce8060794ed7d1737356a83e2bdf49bbe9",
+                "sha256:c775424e983c9eba814da1febdfcf853165ecc01e494077591e370c8d4802bd5"
+            ],
+            "index": "pypi",
+            "version": "==7.4"
         },
         "setuptools": {
             "hashes": [

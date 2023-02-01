@@ -16,8 +16,8 @@
             </thead>
         {% for url in urls %}
             <tr>
-                <td><a href="{{ url.original_url }}">{{ url.original_url }}</a></td>
-                <td><a href= "{{url.short_url}}">{{url.short_url}}</a></td>
+                <td class="original-url"><a href="{{ url.original_url }}">{{ url.original_url }}</a></td>
+                <td class="shortened-url"><a href= "{{url.short_url}}">{{url.short_url}}</a></td>
             </tr>
         {% endfor %}
         </table>

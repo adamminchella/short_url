@@ -11,18 +11,29 @@ thead {
 }
 
 thead th:nth-child(1) {
-  width: 80%;
+  width: 70%;
 }
 
 thead th:nth-child(2) {
-  width: 20%;
+  width: 30%;
 }
 
-tr :first-child {
-  padding-right: 20px;
-}
-
+th,
 td {
+  padding: 10px 0;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.original-url {
   overflow: scroll;
   white-space: nowrap;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.shortened-url {
+  text-align: center;
 }
