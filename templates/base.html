@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='/css/styles.css') }}"
     />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon.png') }}" >
     {% block head %}{% endblock head %}
     <title>{% block title %}{% endblock title %}</title>
   </head>
@@ -15,7 +16,7 @@
     <header>
         <nav>
           <a href="/">Home</a>
-          <a href="/urls">Urls</a>
+          <a href="/urls">History</a>
         </nav>
     </header>
     <main>

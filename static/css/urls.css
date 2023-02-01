@@ -41,6 +41,11 @@ tr:nth-child(even) {
   padding-right: 10px;
 }
 
+.original-url a:visited,
+.shortened-url a:visited {
+  color: blue;
+}
+
 .qr-icon {
   width: 20px;
   height: 20px;
@@ -50,4 +55,26 @@ tr:nth-child(even) {
 
 .qr-icon:hover {
   filter: opacity(80%);
+}
+
+.qr-img-container,
+.close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  z-index: 5;
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

@@ -31,7 +31,7 @@ def home():
     if request.method == 'POST':
         url = request.form['url-input']
         # shorted the url
-        shorted_url = "http://localhost:5000/" + id_generator()
+        shorted_url = id_generator()
 
         check_url_exists = ShortUrl.query.filter_by(original_url=url).first()
 
@@ -49,24 +49,33 @@ def home():
                 original_url=url, short_url=shorted_url)
             db.session.add(new_url)
             db.session.commit()
-            return render_template("index.html", short_url=new_url.short_url, original_url=url, img=img)
+            return render_template("index.html", short_url=new_url.short_url, original_url=url)
     else:
         return render_template("index.html"), 200
 
 
-@app.route("/urls")
+@app.route("/urls", methods=['GET', 'POST'])
 def urls():
     all_urls = ShortUrl.query.all()
-    return render_template("urls.html", urls=all_urls), 200
+    if request.method == 'POST':
+        url = request.form['url-input']
+        print(url)
+        img = qrcode.make(url)
+        print(img)
+        img.save(app.root_path + '/static/images/qr.png')
+        print("askugaslfkabsflkauwhglarugbpaeriguabe")
+        return render_template("urls.html", urls=all_urls, img=True), 200
+    return render_template("urls.html", urls=all_urls, img=False), 200
 
 
 @app.route('/<short_url>')
 def redirect_url(short_url):
     # get the url from the database
     url = ShortUrl.query.filter_by(short_url=short_url).first()
+    print(url)
     if url:
         return redirect(url.original_url)
-    return render_template('404.html'), 404
+    return redirect(url_for('home'))
 
 
 if __name__ == "__main__":

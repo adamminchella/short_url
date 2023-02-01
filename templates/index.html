@@ -4,12 +4,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/home.css') }}"/>
 {% endblock head %}
 
-{% block title %}{% endblock title %}
+{% block title %}Short Url{% endblock title %}
 
 {% block content %}
     <section>
         <div class="content">
-            <h1>Shorten a url!</h1>
+            <h1>Shorten a URL!</h1>
             <form action="" method="POST">
                 <div class="url-form-container">
                     <input type="text" name="url-input" id="url-input" placeholder="Enter URL here..." />
@@ -20,7 +20,7 @@
         {% if short_url %}
             <div class="short-url-container">
                 <p>Original URL: <a href="{{ original_url }}">{{ original_url }}</a></p>
-                <p>Shortened URL: <a href="{{ short_url }}">{{ short_url }}</a></p>
+                <p>Shortened URL: <a href="{{ url_for('redirect_url', short_url = short_url) }}">http://localhost:5000/{{ short_url }}</a></p>
                 <img src="../static/images/qr.png" alt="">
             </div>
         {% endif %}
