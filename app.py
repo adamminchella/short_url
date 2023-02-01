@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, jsonify, url_for, request
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+import qrcode
 
 from config import Config
 
@@ -22,6 +23,9 @@ def id_generator(size=6, chars=string.ascii_letters + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
 
+# print(app.root_path, app.instance_path)
+
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
@@ -31,14 +35,22 @@ def home():
 
         check_url_exists = ShortUrl.query.filter_by(original_url=url).first()
 
+        img = qrcode.make(url)
+
+        img.save(app.root_path + '/static/images/qr.png')
+
         if check_url_exists:
             return render_template("index.html", short_url=check_url_exists.short_url, original_url=url)
 
         else:
-            new_url = ShortUrl(original_url=url, short_url=shorted_url)
+            # Link for website
+            # Creating an instance of qrcode
+
+            new_url = ShortUrl(
+                original_url=url, short_url=shorted_url)
             db.session.add(new_url)
             db.session.commit()
-            return render_template("index.html", short_url=new_url.short_url, original_url=url)
+            return render_template("index.html", short_url=new_url.short_url, original_url=url, img=img)
     else:
         return render_template("index.html"), 200
 

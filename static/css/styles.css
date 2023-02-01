@@ -43,3 +43,8 @@ nav > a {
 main {
   flex-grow: 1;
 }
+
+img {
+  width: 300px;
+  height: 300px;
+}

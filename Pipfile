@@ -10,7 +10,7 @@ flask-migrate = "*"
 flask-sqlalchemy = "*"
 psycopg2 = "*"
 gunicorn = "*"
-qrcode = "*"
+qrcode = {extras = ["pil"], version = "*"}
 
 [dev-packages]
 
