@@ -2,7 +2,7 @@ table {
   width: 85%;
   margin: 50px auto 0;
   table-layout: fixed;
-  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 thead {
@@ -16,6 +16,14 @@ thead th:nth-child(1) {
 
 thead th:nth-child(2) {
   width: 30%;
+}
+
+table tr:first-of-type th:first-child {
+  border-top-left-radius: 5px;
+}
+
+table tr:first-of-type th:last-child {
+  border-top-right-radius: 5px;
 }
 
 th,
