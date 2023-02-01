@@ -27,18 +27,18 @@ def home():
     if request.method == 'POST':
         url = request.form['url-input']
         # shorted the url
-        shorted_url = id_generator()
+        shorted_url = "http://localhost:5000/" + id_generator()
 
         check_url_exists = ShortUrl.query.filter_by(original_url=url).first()
 
         if check_url_exists:
-            return redirect(url_for('urls'))
+            return render_template("index.html", short_url=check_url_exists.short_url, original_url=url)
 
         else:
-            short_url = ShortUrl(original_url=url, short_url=shorted_url)
-            db.session.add(short_url)
+            new_url = ShortUrl(original_url=url, short_url=shorted_url)
+            db.session.add(new_url)
             db.session.commit()
-            return redirect(url_for('urls'))
+            return render_template("index.html", short_url=new_url.short_url, original_url=url)
     else:
         return render_template("index.html"), 200
 

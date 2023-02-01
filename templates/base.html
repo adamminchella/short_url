@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/styles.css') }}"
+    />
+    {% block head %}{% endblock head %}
     <title>{% block title %}{% endblock title %}</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/urls">Urls</a></li>
-      </ul>
-    </nav>
-
-    {% block content %} {% endblock content %}
+    <header>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/urls">Urls</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %} {% endblock content %}
+    </main>
   </body>
 </html>

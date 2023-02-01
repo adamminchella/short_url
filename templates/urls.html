@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/urls.css') }}"/>
+{% endblock head %}
+
 
 {% block content %}
-    <table>
-        <thead>
+    <section class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Short URL</th>
+                </tr>
+            </thead>
+        {% for url in urls %}
             <tr>
-                <th>URL</th>
-                <th>Short URL</th>
+                <td><a href="{{ url.original_url }}">{{ url.original_url }}</a></td>
+                <td><a href= "{{url.short_url}}">{{url.short_url}}</a></td>
             </tr>
-        </thead>
-    {% for url in urls %}
-        <tr>
-            <td>{{ url.original_url }}</td>
-            <td>http://localhost:5000/{{url.short_url}}</td>
-        </tr>
-    {% endfor %}
-    </table>
+        {% endfor %}
+        </table>
+    </section>
 {% endblock %}

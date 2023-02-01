@@ -1,0 +1,40 @@
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60%;
+  margin-bottom: 50px;
+}
+
+.url-form-container {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.url-form-container input {
+  font-size: 1.15rem;
+  border-radius: 5px;
+  border: 2px solid var(--primary);
+}
+
+.url-form-container input[type="text"] {
+  width: 40%;
+  padding: 0 20px;
+}
+
+.url-form-container input[type="submit"] {
+  padding: 13px 50px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.url-form-container input[type="submit"]:hover {
+  background-color: var(--primary);
+  color: rgb(255, 255, 255);
+}

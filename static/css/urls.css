@@ -1,0 +1,28 @@
+table {
+  width: 85%;
+  margin: 50px auto 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--primary);
+  color: white;
+}
+
+thead th:nth-child(1) {
+  width: 80%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+tr :first-child {
+  padding-right: 20px;
+}
+
+td {
+  overflow: scroll;
+  white-space: nowrap;
+}
