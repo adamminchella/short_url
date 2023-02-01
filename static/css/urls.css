@@ -1,0 +1,88 @@
+table {
+  width: 85%;
+  margin: 50px auto 0;
+  table-layout: fixed;
+  border-spacing: 0;
+}
+
+thead {
+  background-color: var(--primary);
+  color: white;
+}
+
+thead th:nth-child(1) {
+  width: 70%;
+}
+
+thead th:nth-child(2) {
+  width: 30%;
+}
+
+table tr:first-of-type th:first-child {
+  border-top-left-radius: 5px;
+}
+
+table tr:first-of-type th:last-child {
+  border-top-right-radius: 5px;
+}
+
+th,
+td {
+  padding: 10px 0;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.original-url {
+  overflow: scroll;
+  white-space: nowrap;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.shortened-url {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.original-url a:visited,
+.shortened-url a:visited {
+  color: blue;
+}
+
+.qr-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: opacity(50%);
+}
+
+.qr-icon:hover {
+  filter: opacity(80%);
+}
+
+.qr-img-container,
+.close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  z-index: 5;
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

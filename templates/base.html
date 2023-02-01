@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/styles.css') }}"
+    />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon.png') }}" >
+    {% block head %}{% endblock head %}
+    <title>{% block title %}{% endblock title %}</title>
+  </head>
+  <body>
+    <header>
+        <nav>
+          <div>
+            <a href="/">
+              <img class="home-icon" src="../static/images/favicon.png" alt="">
+            </a>
+            <div class="nav-link-container">
+              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/urls">History</a>
+            </div>
+          </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %} {% endblock content %}
+    </main>
+  </body>
+</html>
